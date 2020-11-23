@@ -1,3 +1,5 @@
+require 'pry'
+
 class Git
   attr_reader :title, :description
 
@@ -9,7 +11,9 @@ class Git
     }
     @description = ''
 
-    read_file(file_path)
+    message = read_file(file_path)
+    update_title(message)
+    update_description(message)
   end
 
   def full_title
@@ -20,26 +24,35 @@ class Git
 
   def read_file(file_path)
     File.open(file_path) do |file|
-      got_title = false
+      message = ''
+
       file.each do |line|
-        if line.length > 1 && line.include?("\n")
-          if got_title
-            @description += line unless line.lstrip.match(/^#/)
-          else
-            update_title(line)
-            got_title = true
-          end
-        end
+        next unless file.lineno > 4
+
+        message += line
       end
+      message
     end
   rescue Errno::ENOENT
-    'File donot exist.'
+    false
   end
 
-  def update_title(line)
-    title_splitted = line.split
-    title[:type] = title_splitted[0]
-    title[:scope] = title_splitted[1]
-    title[:short_summary] = title_splitted[2..-1].join(' ')
+  def update_title(message)
+    message.match(/(.+\n?)+\n{2,}/x) do |title|
+      title = title.to_s.strip
+      return false unless title.length > 1
+
+      title_splitted = title.split
+      self.title[:type] = title_splitted[0]
+      self.title[:scope] = title_splitted[1] if title_splitted[1]
+      self.title[:short_summary] = title_splitted[2..-1].join(' ') if title_splitted[2]
+    end
+  end
+
+  def update_description(message)
+    message.match(/\n{2,}(.+\n+)+/x) do |description|
+      description = description.to_s.strip
+      @description = description
+    end
   end
 end

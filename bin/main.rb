@@ -2,10 +2,15 @@
 require 'colorize'
 require './lib/git'
 
+def access_commit_file
+  File.join(__dir__, '../COMMIT_EDITMSG')
+end
+
 Dir.chdir(__dir__) do
   Dir.chdir('../') do
+    # system("git log -n 1")
     if Dir.exist?('.git')
-      x = Git.new("#{Dir.pwd}/CnOMMIT_EDITMSG")
+      x = Git.new(access_commit_file)
 
       puts x.title, x.description
       puts x.full_title
@@ -14,3 +19,5 @@ Dir.chdir(__dir__) do
     end
   end
 end
+
+# r = system("git log -n 1")
