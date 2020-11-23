@@ -1,0 +1,4 @@
+This is a commit message for heading
+
+and here comes the description that should be checked by the linters
+# with this line as a comment message which should not be detected.
