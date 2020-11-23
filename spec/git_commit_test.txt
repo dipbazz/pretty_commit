@@ -1,0 +1,5 @@
+This is a commit message to test for rspec
+
+and here comes the description that should be checked by the linters
+# with this line as a comment message which should not be detected.
+with multiple lines that works as a description
