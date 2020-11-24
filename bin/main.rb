@@ -2,6 +2,9 @@
 require 'colorize'
 require './lib/git'
 require './lib/analyzer/title_length'
+require './lib/analyzer/title_type'
+require './lib/analyzer/title_ends_with_dot'
+require './lib/analyzer/base'
 
 def access_commit_file
   File.join(__dir__, '../COMMIT_EDITMSG')
@@ -13,12 +16,17 @@ Dir.chdir(__dir__) do
     if Dir.exist?('.git')
       x = Git.new(access_commit_file)
 
-      check_title = TitleLength.new(x.title)
-
+      check_title = TitleLength.new(x.title.full_title)
       check_title.check_error
 
-      check_title.generate_report { |message| puts message }
+      check_type = TitleType.new(x.title.type)
+      check_type.check_error
 
+      PreetyCommit::Error.all.each do |instance|
+        instance.generate_error { |message| puts message }
+      end
+
+      PreetyCommit::Error.total_error { |message| puts message }
       # puts x.title.full_title, x.description.description
       # puts x.full_title
     else
