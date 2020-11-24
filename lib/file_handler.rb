@@ -4,7 +4,6 @@ class FileHandler
   end
 
   def read_file
-    puts @file
     File.open(@file) do |file|
       message = ''
 
