@@ -1,29 +1,17 @@
+require './lib/file_handler'
+
 class Git
   attr_reader :title, :description
 
   def initialize(file_path)
-    message = read_file(file_path)
+    @file = FileHandler.new(file_path)
 
+    message = @file.read_file
     @title = Title.new(extract_title(message))
     @description = Description.new(extract_description(message))
   end
 
   private
-
-  def read_file(file_path)
-    File.open(file_path) do |file|
-      message = ''
-
-      file.each do |line|
-        next unless file.lineno > 4
-
-        message += line
-      end
-      message
-    end
-  rescue Errno::ENOENT
-    false
-  end
 
   def extract_title(message)
     message.match(/(.+\n?)+\n{2,}/x) do |title|
