@@ -12,8 +12,8 @@ Dir.chdir(__dir__) do
     if Dir.exist?('.git')
       x = Git.new(access_commit_file)
 
-      puts x.title, x.description
-      puts x.full_title
+      puts x.title.full_title, x.description.description
+      # puts x.full_title
     else
       puts 'You have not created a git repository. First create a repo and add commits.'.colorize(:red).underline
     end
