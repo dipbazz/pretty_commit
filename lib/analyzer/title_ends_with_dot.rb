@@ -5,8 +5,7 @@ class TitleEndsWithDot < Analyzer
     super()
 
     @title = title
-    p @title
-    @type = 'TitleEndsWithDot'
+    @error_type = 'TitleEndsWithDot'
     @message = "Title shouln't end with dot(.)"
     @location = "... #{@title[-@title.length / 2..-1]}"
   end
@@ -22,6 +21,6 @@ class TitleEndsWithDot < Analyzer
   def check_error
     return unless title_has_a_dot?
 
-    @error.add_error(@type, @message, @location)
+    @error.add_error(@error_type, @message, @location)
   end
 end

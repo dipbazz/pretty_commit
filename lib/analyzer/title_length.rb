@@ -1,16 +1,16 @@
 require './lib/analyzer/base'
 
-MAX_LENGTH = 50
-MIN_LENGTH = 5
+MAX_TITLE_LENGTH = 50
+MIN_TITLE_LENGTH = 5
 
 class TitleLength < Analyzer
   def initialize(title)
     super()
 
     @title = title
-    @type = 'TitleLength'
+    @error_type = 'TitleLength'
     @message = proc { |len|
-      "Title length should be in between #{MIN_LENGTH} - #{MAX_LENGTH}. Your title length is #{len}."
+      "Title length should be in between #{MIN_TITLE_LENGTH} - #{MAX_TITLE_LENGTH}. Your title length is #{len}."
     }
     @location = @title
   end
@@ -20,12 +20,12 @@ class TitleLength < Analyzer
   end
 
   def title_length_valid?
-    title_length >= MIN_LENGTH && title_length <= MAX_LENGTH
+    title_length >= MIN_TITLE_LENGTH && title_length <= MAX_TITLE_LENGTH
   end
 
   def check_error
     return if title_length_valid?
 
-    @error.add_error(@type, @message.call(title_length), @location)
+    @error.add_error(@error_type, @message.call(title_length), @location)
   end
 end

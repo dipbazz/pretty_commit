@@ -28,9 +28,7 @@ class TitleTypeValid < TitleType
 
     @error.add_error(@error_type, @message.call, @location)
   end
-
 end
-
 
 class TitleTypeCapitalize < TitleType
   def initialize(type)
@@ -43,6 +41,7 @@ class TitleTypeCapitalize < TitleType
 
   def type_capitalized?
     return @title_type[0] == @title_type[0].upcase if @title_type[0]
+
     false
   end
 
@@ -51,5 +50,4 @@ class TitleTypeCapitalize < TitleType
 
     @error.add_error(@error_type, @message, @location)
   end
-
 end

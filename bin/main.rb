@@ -4,6 +4,7 @@ require './lib/git'
 require './lib/analyzer/title_length'
 require './lib/analyzer/title_type'
 require './lib/analyzer/title_ends_with_dot'
+require './lib/analyzer/description'
 require './lib/analyzer/base'
 
 def access_commit_file
@@ -12,8 +13,10 @@ end
 
 Dir.chdir(__dir__) do
   Dir.chdir('../') do
-    # system("git log -n 1")
     if Dir.exist?('.git')
+
+      system("git log -n 1 > COMMIT_EDITMSG")
+
       x = Git.new(access_commit_file)
 
       check_title = TitleLength.new(x.title.full_title)
@@ -24,6 +27,9 @@ Dir.chdir(__dir__) do
 
       type_cap = TitleTypeCapitalize.new(x.title.type)
       type_cap.check_error
+
+      desc = DescriptionAnalyzer.new(x.description.description)
+      desc.check_error
 
       PreetyCommit::Error.all.each do |instance|
         instance.generate_error { |message| puts message }

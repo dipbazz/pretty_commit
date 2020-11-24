@@ -7,7 +7,11 @@ class Git
     @file = FileHandler.new(file_path)
 
     message = @file.read_file
+    p message
+    puts '---------------'
     @title = Title.new(extract_title(message))
+    puts @title
+    puts '----------------'
     @description = Description.new(extract_description(message))
   end
 
@@ -30,6 +34,8 @@ class Title
   attr_reader :type, :scope, :short_summary
 
   def initialize(title)
+    puts title
+    puts '---------------'
     @type = ''
     @short_summary = ''
     @scope = ''
