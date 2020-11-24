@@ -1,5 +1,6 @@
 require 'colorize'
 
+# rubocop:disable Style/ClassVars
 module PreetyCommit
   class Error
     @@instances = []
@@ -19,7 +20,7 @@ module PreetyCommit
     def generate_error
       @errors.each do |error|
         message = (error[2]).to_s.colorize(:default).bold if error[2]
-        message += "\n" + '^'*error[2].length
+        message += "\n#{'^' * error[2].length}"
         message += "\n#{error[0]}: ".colorize(:light_blue) + (error[1]).to_s.colorize(:red)
         yield message
       end
@@ -42,6 +43,7 @@ module PreetyCommit
     end
   end
 end
+# rubocop:enable Style/ClassVars
 
 class Analyzer
   include PreetyCommit

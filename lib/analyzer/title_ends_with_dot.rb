@@ -8,7 +8,7 @@ class TitleEndsWithDot < Analyzer
     p @title
     @type = 'TitleEndsWithDot'
     @message = "Title shouln't end with dot(.)"
-    @location = '... ' + @title[-@title.length/2..-1]
+    @location = "... #{@title[-@title.length / 2..-1]}"
   end
 
   attr_reader :error

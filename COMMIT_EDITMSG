@@ -3,7 +3,7 @@ Author: Dipesh Bajgain <dipbazz@gmail.com>
 Date:   Mon Nov 23 16:02:23 2020 +0545
 
     Initialize test in the project and add git_spec.rb file
-     making a long commit message to test
+     making a long commit message to test.
 
     Add test case in git_spec.rb file which test:
     - the #initialize method for the title type, scope
