@@ -19,8 +19,11 @@ Dir.chdir(__dir__) do
       check_title = TitleLength.new(x.title.full_title)
       check_title.check_error
 
-      check_type = TitleType.new(x.title.type)
+      check_type = TitleTypeValid.new(x.title.type)
       check_type.check_error
+
+      type_cap = TitleTypeCapitalize.new(x.title.type)
+      type_cap.check_error
 
       PreetyCommit::Error.all.each do |instance|
         instance.generate_error { |message| puts message }

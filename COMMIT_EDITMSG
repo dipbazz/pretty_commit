@@ -2,7 +2,7 @@ commit fe7139095b8cadfa741a0382b36db24131895773
 Author: Dipesh Bajgain <dipbazz@gmail.com>
 Date:   Mon Nov 23 16:02:23 2020 +0545
 
-    Initialize test in the project and add git_spec.rb file
+    initialize test in the project and add git_spec.rb file
      making a long commit message to test.
 
     Add test case in git_spec.rb file which test:

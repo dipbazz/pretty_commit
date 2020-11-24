@@ -56,5 +56,7 @@ class Analyzer
     @error = Error.new
   end
 
+  attr_reader :error
+
   def check_error; end
 end

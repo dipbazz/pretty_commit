@@ -15,8 +15,6 @@ class TitleLength < Analyzer
     @location = @title
   end
 
-  attr_reader :error
-
   def title_length
     @title.length
   end

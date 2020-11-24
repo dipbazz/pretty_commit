@@ -11,8 +11,6 @@ class TitleEndsWithDot < Analyzer
     @location = "... #{@title[-@title.length / 2..-1]}"
   end
 
-  attr_reader :error
-
   def title_length
     @title.full_title.length
   end
