@@ -1,4 +1,3 @@
-
 class Git
   attr_reader :title, :description
 
@@ -28,18 +27,20 @@ class Git
 
   def extract_title(message)
     message.match(/(.+\n?)+\n{2,}/x) do |title|
-      title = title.to_s.strip
+      title.to_s.strip
     end
   end
 
   def extract_description(message)
     message.match(/\n{2,}(.+\n+)+/x) do |description|
-      description = description.to_s.strip
+      description.to_s.strip
     end
   end
 end
 
 class Title
+  attr_reader :type, :scope, :short_summary
+
   def initialize(title)
     @type = ''
     @short_summary = ''
