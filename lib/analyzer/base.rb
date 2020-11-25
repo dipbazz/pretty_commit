@@ -1,7 +1,7 @@
 require 'colorize'
 
 # rubocop:disable Style/ClassVars
-module PreetyCommit
+module PrettyCommit
   class Error
     @@instances = []
     @@error_count = 0
@@ -38,7 +38,7 @@ module PreetyCommit
       if @@error_count.zero?
         yield "\nHmm. You have mastered the git commit message.".colorize(:green)
       else
-        yield "\nTotal #{"#{@@error_count} errors".colorize(:red)}detected."
+        yield "\nTotal #{"#{@@error_count} errors".colorize(:red)} detected."
       end
     end
   end
@@ -46,7 +46,7 @@ end
 # rubocop:enable Style/ClassVars
 
 class Analyzer
-  include PreetyCommit
+  include PrettyCommit
 
   def initialize
     @error_type = ''

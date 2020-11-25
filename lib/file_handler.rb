@@ -15,6 +15,6 @@ class FileHandler
       message
     end
   rescue Errno::ENOENT
-    false
+    puts "File doesnot exist: #{@file}"
   end
 end

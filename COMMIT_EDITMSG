@@ -1,14 +1,10 @@
-commit fe7139095b8cadfa741a0382b36db24131895773
+commit f83507c65f7ef7012920b23bc952f0b71222a1fd
 Author: Dipesh Bajgain <dipbazz@gmail.com>
-Date:   Mon Nov 23 16:02:23 2020 +0545
+Date:   Tue Nov 24 21:30:21 2020 +0545
 
-    initialize test in the project and add git_spec.rb file
-     making a long commit message to test.
-
-    Add test case in git_spec.rb file which test:
-    - the #initialize method for the title type, scope
-      and short_summary
-    - the #full_title method which returns the full title as combined
-      <type> [<scope>] <short summary>
-
-    here may be multiline commits will this satisfies the condition
+    Add description.rb file that checks commit description
+    
+    DescriptionAnalyzer class goes line by line for the commit message
+    description and checks if the line exceeds the line limit 72
+    character and if thats true than its adds new error message
+    showing this specific line exceeds the limit.

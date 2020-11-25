@@ -1,4 +1,4 @@
-require './lib/analyzer/base'
+require_relative './base'
 
 class TitleEndsWithDot < Analyzer
   def initialize(title)
