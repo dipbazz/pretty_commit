@@ -13,7 +13,8 @@ jobs:
           ruby-version: 2.6.x
       - name: Setup RSpec
         run: |
-          [ -f Gemfile ] && bundle --deployment
+          [ -f Gemfile ] &&  gem install bundler:2.1.4 && bundle --deployment
+          gem install telegram-bot-ruby && gem install htmlentities
           gem install --no-document rspec:'~>3.0'
       - name: RSpec Report
         run: rspec --force-color --format documentation
