@@ -1,10 +1,12 @@
 class FileHandler
+  attr_reader :file_path
+
   def initialize(file_path)
-    @file = file_path
+    @file_path = file_path
   end
 
   def read_file
-    File.open(@file) do |file|
+    File.open(file_path) do |file|
       message = ''
 
       file.each do |line|
@@ -15,6 +17,6 @@ class FileHandler
       message
     end
   rescue Errno::ENOENT
-    puts "File doesnot exist: #{@file}"
+    nil
   end
 end
