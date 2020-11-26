@@ -1,15 +1,35 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Preety commit
-This project helps to check your commit message if you followed the well adapted commit guidlines or not.
+# Pretty commit
+
+## Table of contents
+
+- [Definition](#definition)
+  * [Why to follow git commit guidlines?](#why-to-follow-git-commit-guidlines)
+  * [Commit structure to follow](#commit-structure-to-follow)
+  * [Good Commit message](#good-commit-message)
+  * [Bad commit message](#bad-commit-message)
+- [Built with](#built-with)
+- [Getting started](#getting-started)
+- [Authors](#authors)
+- [Contributing](#-contributing)
+- [Show your support](#show-your-support)
+- [Acknowledgements](#acknowledgments)
+- [License](#-license)
+
+---
+
+## About
+
+This project helps to check git commit message if we followed the well-adapted commit guidelines or not.
 
 ## Definition
 
-1. **why follow git commit guidlines**
+#### Why to follow git commit guidelines?
 
-Git commit message is a way to tell other developer what you have accomplished in the current commit of your code, so that they will understand what has been changed or updated in codebase. Because of that we should follow the commit guidlines that can save us and other developer time to figure out why certain changes was adapted.
+Git commits message is a way to tell other developers what you have accomplished in the current commit of your code so that they will understand what has been changed or updated in the codebase. Because of that, we should follow the commit guidelines that can save us and other developers time to figure out why certain changes were adopted.
 
-2. **Commit structure to follow**
+#### Commit structure to follow
 
 ```
 <type> [<scope>(optional)] <short_summary>
@@ -19,10 +39,10 @@ Git commit message is a way to tell other developer what you have accomplished i
 
   - `<type>` can be from a list ["build", "ci", "docs", "feat", "add", "update", "refactor", "fix", "style", "test", "revert", "perf"]
   - `<scope>` is optional but could be anything specifying the place of changes filename, location, functions,  etc.
-  - `<short_summary>` short explanation in imperative mood. Not capitalized. No period at the end.
-  - `<description>` This is the part where you leave a detailed description about your changes during commit. Try to explain what and why you have done something. But be sure to wrap every line within 72 character.
+  - `<short_summary>` short explanation in imperative mood. Not capitalized. No period in the end.
+  - `<description>` This is the part where you leave a detailed description of your changes during commit. Try to explain what and why you have done something. But be sure to wrap every line within 72 characters.
 
-3. **Good commit message**
+#### Good commit messag
 
 ```
 Summarize changes in around 50 characters or less
@@ -54,21 +74,21 @@ Resolves: #123
 See also: #456, #789
 
 ```
-For more information regarding how you can have a great commit message you can follow [Chris Beams](https://chris.beams.io/) article about [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/)
+For more information regarding how you can have a great commit message, you can follow [Chris Beams](https://chris.beams.io/) article about [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/)
 
-4. **Bad commit messages**
+#### Bad commit messages
 
 ```
-The commit message in which there is only title trying to explaing everything in one line and exceeds the line limit of 50 chars or more
+The commit message which only has a title trying to explain everything in one line and exceeds the line limit of 50 chars or more
 ```
-```    
-commit title that ends with dot.
+```
+commit title that ends with a dot.
 ```
 
 ```
 Test FileHandler to accept only .pdf file
 
-The title is good but may be a description is not wrapping within a 72 characters line limit is another example of bad commit message.
+The title is good but possibly a description is not wrapping within a 72 characters line limit is another example of a bad commit message.
 ```
 
 ## Built With
@@ -79,23 +99,23 @@ The title is good but may be a description is not wrapping within a 72 character
 
 - Clone this repo.
 - Navigate to the preety_commit folder
-- install gem package with `bundle install`
-- In your terminal run 
+- install the gem package with `bundle install`
+- In your terminal run
 
-    `./bin/prettycommit /path/to/your/git/project/`
+    `./bin/main.rb /path/to/your/git/project/`
 
-    or 
+    or
 
-    `./bin/prettycommit` 
+    `./bin/main.rb`
 
-    it will accept `.` as a current path. And to get a help
-    
-    `./bin/prettycommit -h` 
+    it will accept `.` as a current path. And to get help
+
+    `./bin/main.rb -h`
 
 **To test the code with rspec.**
-  - install rspec using `gem install rspec` 
-  - run `rspec` or `rspec --format doc` on your terminal to test the code .
-  
+  - install rspec using `gem install rspec`
+  - run `rspec` or `rspec --format doc` on your terminal to test the code.
+
 
 
 ## Authors
@@ -116,7 +136,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- [Git commit guidlines](https://gist.github.com/robertpainsi/b632364184e70900af4ab688decf6f53) to get understanding about what are the guidelines.
+- [Git commit guidlines](https://gist.github.com/robertpainsi/b632364184e70900af4ab688decf6f53) to get an understanding of what are the guidelines.
 - [online git commit message editor](https://commitlint.io/)
 
 ## 📝 License
