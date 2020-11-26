@@ -11,7 +11,7 @@ def access_commit_file
 end
 
 def create_last_commit_file
-  # system('git log -n 1 > COMMIT_EDITMSG')
+  system('git log -n 1 > COMMIT_EDITMSG')
 end
 
 def start_preety_commit(dir_path, &block)

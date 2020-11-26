@@ -13,6 +13,10 @@ describe FileHandler do
       expect(file.file_path).to eql(access_test_file)
     end
 
+    it 'checks for incorrect path' do
+      expect(file.file_path).not_to eql('incorrect/path/to/fail/')
+    end
+
     it 'handles the incorrect file path' do
       expect { file.file_path = 'update/location/' }.to raise_error(NoMethodError)
     end
@@ -21,6 +25,10 @@ describe FileHandler do
   describe '#read_file' do
     it 'checks the content of file' do
       expect(file.read_file).to start_with('    Initialize test in the project and add git_spec.rb')
+    end
+
+    it 'checks content that dont exist' do
+      expect(file.read_file).not_to start_with('this is not in the file')
     end
 
     it 'handles the file not found error' do
