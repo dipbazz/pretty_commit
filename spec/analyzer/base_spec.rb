@@ -82,7 +82,6 @@ describe PrettyCommit::Error do
   end
 end
 
-
 describe Analyzer do
   let(:analyzer) { Analyzer.new }
 

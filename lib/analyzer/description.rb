@@ -1,7 +1,5 @@
 require_relative './base'
 
-MAX_LENGTH = 72
-
 class DescriptionAnalyzer < Analyzer
   def initialize(description)
     super()
@@ -11,7 +9,7 @@ class DescriptionAnalyzer < Analyzer
 
     @error_type = 'DescriptionLineLength'
     @message = proc { |len|
-      "This line in your description exceeds the line limit #{MAX_LENGTH}. It has a length of #{len}"
+      "This line in your description exceeds the line limit #{MAX_DESCRIPTION_LENGTH}. It has a length of #{len}"
     }
     @location = proc { |line| "\n#{line}" }
   end
@@ -27,6 +25,6 @@ class DescriptionAnalyzer < Analyzer
   private
 
   def line_valid?(line)
-    line.length <= MAX_LENGTH
+    line.length <= MAX_DESCRIPTION_LENGTH
   end
 end

@@ -2,6 +2,13 @@ require 'colorize'
 
 # rubocop:disable Style/ClassVars
 module PrettyCommit
+  MAX_TITLE_LENGTH = 50
+  MIN_TITLE_LENGTH = 5
+
+  TITLE_TYPE = %w[build ci docs feat add update refactor fix style test revert perf].freeze
+
+  MAX_DESCRIPTION_LENGTH = 72
+
   class Error
     @@instances = []
     @@error_count = 0

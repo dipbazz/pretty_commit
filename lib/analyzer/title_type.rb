@@ -1,7 +1,5 @@
 require_relative './base'
 
-TITLE_TYPE = %w[build ci docs feat add update refactor fix style test revert perf].freeze
-
 class TitleType < Analyzer
   def initialize(type)
     super()

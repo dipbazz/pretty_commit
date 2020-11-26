@@ -1,8 +1,5 @@
 require_relative './base'
 
-MAX_TITLE_LENGTH = 50
-MIN_TITLE_LENGTH = 5
-
 class TitleLength < Analyzer
   def initialize(title)
     super()
