@@ -19,14 +19,16 @@ class TitleTypeValid < TitleType
     @message = proc { "Title type should be from a list #{TITLE_TYPE}" }
   end
 
-  def type_included?
-    TITLE_TYPE.include?(@title_type.downcase)
-  end
-
   def check_error
     return if type_included?
 
     @error.add_error(@error_type, @message.call, @location)
+  end
+
+  private
+
+  def type_included?
+    TITLE_TYPE.include?(@title_type.downcase)
   end
 end
 
@@ -39,15 +41,17 @@ class TitleTypeCapitalize < TitleType
     @message = "Title type should be capitalize. Make #{@title_type.capitalize} not #{@title_type}"
   end
 
-  def type_capitalized?
-    return @title_type[0] == @title_type[0].upcase if @title_type[0]
-
-    false
-  end
-
   def check_error
     return if type_capitalized?
 
     @error.add_error(@error_type, @message, @location)
+  end
+
+  private
+
+  def type_capitalized?
+    return @title_type[0] == @title_type[0].upcase if @title_type[0]
+
+    false
   end
 end

@@ -16,10 +16,6 @@ class DescriptionAnalyzer < Analyzer
     @location = proc { |line| line.to_s }
   end
 
-  def line_valid?(line)
-    line.length <= MAX_LENGTH
-  end
-
   def check_error
     return unless @description
 
@@ -27,5 +23,11 @@ class DescriptionAnalyzer < Analyzer
       line[0..3] = ''
       @error.add_error(@error_type, @message.call(line.length), @location.call(line)) unless line_valid?(line)
     end
+  end
+
+  private
+
+  def line_valid?(line)
+    line.length <= MAX_LENGTH
   end
 end
