@@ -11,7 +11,15 @@ def access_commit_file
 end
 
 def create_last_commit_file
-  system('git log -n 1 > COMMIT_EDITMSG')
+  # system('git log -n 1 > COMMIT_EDITMSG')
+end
+
+def display_total_error(total_error)
+  if total_error.zero?
+    yield "\nHmm. You have mastered the git commit message.".colorize(:green)
+  else
+    yield "\nTotal #{"#{total_error} errors".colorize(:red)} detected."
+  end
 end
 
 def start_preety_commit(dir_path, &block)
@@ -25,15 +33,19 @@ def start_preety_commit(dir_path, &block)
 
       TitleTypeValid.new(git_commit.title.type).check_error
 
+      TitleEndsWithDot.new(git_commit.title.full_title).check_error
+
       TitleTypeCapitalize.new(git_commit.title.type).check_error
 
       DescriptionAnalyzer.new(git_commit.description.description).check_error
 
-      PrettyCommit::Error.all.each do |instance|
+      total_error = 0
+      ObjectSpace.each_object(PrettyCommit::Error).each do |instance|
         instance.generate_error(&block)
+        total_error += instance.total_error
       end
 
-      PrettyCommit::Error.total_error(&block)
+      display_total_error(total_error, &block)
     else
       yield 'You have not created a git repository. First create a repo and add commits.'.colorize(:red).underline
     end
