@@ -81,3 +81,14 @@ describe PrettyCommit::Error do
     end
   end
 end
+
+
+describe Analyzer do
+  let(:analyzer) { Analyzer.new }
+
+  describe '#check_error' do
+    it 'return nil' do
+      expect(analyzer.check_error).to be_nil
+    end
+  end
+end
