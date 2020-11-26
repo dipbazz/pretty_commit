@@ -14,9 +14,7 @@ describe TitleEndsWithDot do
 
     context 'when title have a dot' do
       it 'adds error' do
-        PrettyCommit::Error.clear
-        title_with_dot.check_error
-        expect(PrettyCommit::Error.all.length).to eql(1)
+        expect(title_with_dot.check_error).to eql(1)
       end
     end
   end

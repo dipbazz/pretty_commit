@@ -16,9 +16,7 @@ describe TitleLength do
 
     context 'when invalid title' do
       it 'adds error' do
-        PrettyCommit::Error.clear
-        invalid_title.check_error
-        expect(PrettyCommit::Error.all.length).to eql(1)
+        expect(invalid_title.check_error).to eql(1)
       end
     end
   end

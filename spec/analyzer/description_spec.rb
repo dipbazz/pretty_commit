@@ -1,5 +1,4 @@
 require_relative '../../lib/analyzer/description'
-require_relative '../../lib/analyzer/base'
 
 describe DescriptionAnalyzer do
   let(:empty_desc) { DescriptionAnalyzer.new('') }
@@ -15,12 +14,6 @@ describe DescriptionAnalyzer do
     context 'when description is valid' do
       it 'adds no error' do
         expect(desc.check_error).to eql(['This is a description'])
-      end
-
-      it 'validate empty error' do
-        PrettyCommit::Error.clear
-        desc.check_error
-        expect(PrettyCommit::Error.all.length).to eql(1)
       end
     end
   end

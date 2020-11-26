@@ -15,7 +15,7 @@ describe PrettyCommit::Error do
     end
 
     it 'adds error and increment the error count' do
-      expect(second_error).to eql(2)
+      expect(second_error).to eql(1)
     end
   end
 
@@ -51,33 +51,6 @@ describe PrettyCommit::Error do
       it 'controls two yield' do
         expect { |b| error.generate_error(&b) }.to yield_control.twice
       end
-    end
-  end
-
-  describe '.clear' do
-    it 'clears the instances' do
-      expect(PrettyCommit::Error.clear).to be_empty
-    end
-  end
-
-  describe '.all' do
-    before do
-      PrettyCommit::Error.clear
-      first_error
-    end
-
-    it 'checks total instances' do
-      expect(PrettyCommit::Error.all.length).to eql 1
-    end
-  end
-
-  describe '.total_error' do
-    before do
-      PrettyCommit::Error.clear
-    end
-
-    it 'returns yield as total message' do
-      expect { |b| PrettyCommit::Error.total_error(&b) }.to yield_control
     end
   end
 end

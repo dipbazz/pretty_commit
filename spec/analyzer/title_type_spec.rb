@@ -14,9 +14,7 @@ describe TitleTypeValid do
 
     context 'when invalid title type' do
       it 'adds error' do
-        PrettyCommit::Error.clear
-        invalid_title_type.check_error
-        expect(PrettyCommit::Error.all.length).to eql(1)
+        expect(invalid_title_type.check_error).to eql(1)
       end
     end
   end
@@ -35,9 +33,7 @@ describe TitleTypeCapitalize do
 
     context 'when invalid title type' do
       it 'adds error' do
-        PrettyCommit::Error.clear
-        invalid_title_type.check_error
-        expect(PrettyCommit::Error.all.length).to eql(1)
+        expect(invalid_title_type.check_error).to eql(1)
       end
     end
   end
