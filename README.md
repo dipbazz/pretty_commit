@@ -23,6 +23,10 @@
 
 This project helps to check git commit message if we followed the well-adapted commit guidelines or not.
 
+The screenshot after running cmd `./bin/main.rb` and linter showing errors.
+
+![Screenshot of code in action](./assets/screenshot.png)
+
 ## Definition
 
 #### Why to follow git commit guidelines?

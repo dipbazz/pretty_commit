@@ -13,14 +13,13 @@ class DescriptionAnalyzer < Analyzer
     @message = proc { |len|
       "This line in your description exceeds the line limit #{MAX_LENGTH}. It has a length of #{len}"
     }
-    @location = proc { |line| line.to_s }
+    @location = proc { |line| "\n#{line.to_s}" }
   end
 
   def check_error
     return unless @description
 
     @description_by_line.each do |line|
-      line[0..3] = ''
       @error.add_error(@error_type, @message.call(line.length), @location.call(line)) unless line_valid?(line)
     end
   end
