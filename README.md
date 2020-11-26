@@ -5,10 +5,10 @@
 ## Table of contents
 
 - [Definition](#definition)
-  * [Why to follow git commit guidlines?](#why-to-follow-git-commit-guidlines)
+  * [Why to follow git commit guidlines?](#why-to-follow-git-commit-guidelines)
   * [Commit structure to follow](#commit-structure-to-follow)
   * [Good Commit message](#good-commit-message)
-  * [Bad commit message](#bad-commit-message)
+  * [Bad commit message](#bad-commit-messages)
 - [Built with](#built-with)
 - [Getting started](#getting-started)
 - [Authors](#authors)
@@ -42,7 +42,7 @@ Git commits message is a way to tell other developers what you have accomplished
   - `<short_summary>` short explanation in imperative mood. Not capitalized. No period in the end.
   - `<description>` This is the part where you leave a detailed description of your changes during commit. Try to explain what and why you have done something. But be sure to wrap every line within 72 characters.
 
-#### Good commit messag
+#### Good commit message
 
 ```
 Summarize changes in around 50 characters or less
