@@ -1,4 +1,4 @@
-require './lib/file_handler'
+require_relative './file_handler'
 
 class Git
   attr_reader :title, :description
