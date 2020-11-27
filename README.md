@@ -5,7 +5,7 @@
 ## Table of contents
 
 - [Definition](#definition)
-  * [Why to follow git commit guidlines?](#why-to-follow-git-commit-guidelines)
+  * [Why to follow git commit guidelines?](#why-to-follow-git-commit-guidelines)
   * [Commit structure to follow](#commit-structure-to-follow)
   * [Good Commit message](#good-commit-message)
   * [Bad commit message](#bad-commit-messages)
@@ -119,7 +119,7 @@ In your terminal by running `./bin/main.rb -h` you can get all the usage.
 
    ```
    Usage: ./bin/main.rb [-p <dir_path>] [-c] [-h]
-   
+
    Explanation of arguments:
     -p      is to specify a path for a directory.
     -c      is to specify if you want this program to run git commit for you.
@@ -148,7 +148,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- [Git commit guidlines](https://gist.github.com/robertpainsi/b632364184e70900af4ab688decf6f53) to get an understanding of what are the guidelines.
+- [Git commit guidelines](https://gist.github.com/robertpainsi/b632364184e70900af4ab688decf6f53) to get an understanding of what are the guidelines.
 - [online git commit message editor](https://commitlint.io/)
 
 ## 📝 License

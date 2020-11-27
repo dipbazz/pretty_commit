@@ -1,4 +1,4 @@
-# Title should be wrapped with in 50 chars.
+# Title should be wrapped in 50 chars.
 # Format of your title should be `<type>` [`<scope>`] `<short_summary>`
 # `<type>` can be from a list of
 # ["build", "ci", "docs", "feat", "add", "update",
@@ -7,18 +7,18 @@
 # that explain your changes.
 # `<short_summary>` short explanation in imperative mood.
 # Not capitalized. No period in the end.
-# [title] take this as a guidline to write title
+# [title] take this as a guideline to write the title
 # -----------------------------------------------
 
 
-# From here on write your description that explains your changes in
+# From here write your description that explains your changes in
 # detail. Try to explain what and why you have done something. But be
 # sure to wrap every line within 72 characters.
-# [Description] take this as a guidline while writting description
+# [Description] take this as a guideline while writing a description
 # ---------------------------------------------------------------------
 
 
-# Why is it necessary? (Bug fix, feature, improvements?)-
+# Why is it necessary? (Bugfix, feature, improvements?)-
 
 
 # How does the change address the issue? -
