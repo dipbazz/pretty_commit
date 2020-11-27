@@ -18,7 +18,7 @@ class Runner
   def start(&block)
     Dir.chdir(@dir_path) do
       if Dir.exist?('.git')
-        create_commit(default_commit_msg_file) if @commit
+        @commit = !commit_created?(default_commit_msg_file) if @commit
 
         unless @commit
           create_last_commit_file
@@ -52,7 +52,7 @@ class Runner
     system("git log -n 1 > #{commit_file}")
   end
 
-  def create_commit(file_path)
+  def commit_created?(file_path)
     system("git commit -t #{file_path}")
   end
 

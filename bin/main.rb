@@ -22,5 +22,4 @@ else
   end
   run = Runner.new(dir_path, commit: ARGV.include?('-c'))
   run.start { |message| puts message }
-  # start_preety_commit(dir_path, ARGV.include?('-c')) { |message| puts message }
 end
