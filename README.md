@@ -11,6 +11,7 @@
   * [Bad commit message](#bad-commit-messages)
 - [Built with](#built-with)
 - [Getting started](#getting-started)
+- [Usage](#usage)
 - [Authors](#authors)
 - [Contributing](#-contributing)
 - [Show your support](#show-your-support)
@@ -102,25 +103,32 @@ The title is good but possibly a description is not wrapping within a 72 charact
 ## Getting Started
 
 - Clone this repo.
-- Navigate to the preety_commit folder
+- Navigate to the preety_commit directory
 - install the gem package with `bundle install`
-- In your terminal run
+- you have it now at your local machine. For usage see [usage](#usage)
 
-    `./bin/main.rb /path/to/your/git/project/`
-
-    or
-
-    `./bin/main.rb`
-
-    it will accept `.` as a current path. And to get help
-
-    `./bin/main.rb -h`
 
 **To test the code with rspec.**
   - install rspec using `gem install rspec`
   - run `rspec` or `rspec --format doc` on your terminal to test the code.
 
 
+## Usage
+
+In your terminal by running `./bin/main.rb -h` you can get all the usage.
+
+   ```
+   Usage: ./bin/main.rb [-p <dir_path>] [-c] [-h]
+   
+   Explanation of arguments:
+    -p      is to specify a path for a directory.
+    -c      is to specify if you want this program to run git commit for you.
+    -h      gives you this help mesage.
+
+  <dir_path> can be:
+      1. /path/to/your/project/directory/
+      2. . (default)
+   ```
 
 ## Authors
 
