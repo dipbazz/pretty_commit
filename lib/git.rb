@@ -1,5 +1,6 @@
 require_relative './file_handler'
 
+# this is a comment
 class Git
   attr_reader :title, :description
 
